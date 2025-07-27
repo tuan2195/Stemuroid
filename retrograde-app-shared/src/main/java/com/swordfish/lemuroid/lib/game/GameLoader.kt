@@ -97,7 +97,7 @@ class GameLoader(
 
                 val saveRAMData =
                     runCatching {
-                        savesManager.getSaveRAM(game, systemCoreConfig)
+                        savesManager.getSaveRAM(game)
                     }.getOrElse { throw GameLoaderException(GameLoaderError.Saves) }
 
                 val quickSaveData =

@@ -806,6 +806,13 @@ abstract class BaseGameActivity : ImmersiveActivity() {
         }
     }
 
+    override fun onPause() {
+        lifecycleScope.launch {
+            saveSRAM(game)
+        }
+        super.onPause()
+    }
+
     private suspend fun autoSaveAndFinish() =
         withLoading {
             saveSRAM(game)
