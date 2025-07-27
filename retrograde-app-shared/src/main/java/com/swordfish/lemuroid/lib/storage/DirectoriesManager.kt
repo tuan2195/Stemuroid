@@ -39,4 +39,6 @@ class DirectoriesManager(private val appContext: Context) {
         File(appContext.getExternalFilesDir(null), "roms").apply {
             mkdirs()
         }
+
+    fun getBaseDirectory(): File = requireNotNull(appContext.getExternalFilesDir(null))
 }
